@@ -1,3 +1,15 @@
+## NOTE: this is the tale theme modified
+- added tags
+- added emoji (like notion)
+  - emoji = "✌🏻" (in the frontmatter)
+- Modified css
+- Responsive
+
+TODO:
+- README.md
+- better managment of images -> auto-resize, exif remover etc.
+
+
 # Tale
 
 [![Build Status](https://travis-ci.com/EmielH/tale-hugo.svg?branch=master)](https://travis-ci.com/EmielH/tale-hugo)
