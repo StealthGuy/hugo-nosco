@@ -180,6 +180,68 @@ To load multiple CSS files, use the parameter like this:
 css = ["custom.css", "custom2.css"]
 ```
 
+### Frontmatter of posts example:
+```
++++
+title = 'Post 1'
+date = 2024-03-21T00:05:03+01:00
+draft = false
+tags = ['Ciao', 'Bello']
+emoji = "🖥"
++++
+```
+### Example  of hugo.toml
+```
+baseURL = 'https://stealthguy.github.io/'
+
+theme = 'tale'
+defaultContentLanguage = "it"
+title = 'Stealth Guy Blog'
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "About"
+    url = "/about/"
+    weight = 0
+  [[menu.main]]
+    identifier = "notes"
+    name = "Notes"
+    title = "Notes"
+    url = "/notes/"
+    weight = 0
+  [[menu.main]]
+    identifier = "Not-Ion"
+    name = "Not-Ion"
+    title = "Not-Ion"
+    url = "/Not-Ion/"
+    weight = 0
+  [[menu.main]]
+    identifier = "Tags"
+    name = "Tags"
+    title = "Tags"
+    url = "/tags/"
+    weight = 0
+  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer] 
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['$', '$']]
+[params]
+  math = true
+  [params.author]
+    name = 'Stealth Guy'
+
+```
+
+
 ## Acknowledgments
 
 Thanks
