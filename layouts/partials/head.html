@@ -1,6 +1,5 @@
 <head>
 		<!-- Google Analytics -->
-		{{ template "_internal/google_analytics_async.html" . }}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{{- if .IsHome }}
@@ -8,6 +7,10 @@
 		{{- else if .Description }}
 			<meta name="description" content="{{ .Description }}">
 		{{- end }}
+		
+		{{ if .Param "math" }}
+    		{{ partialCached "math.html" . }}
+  		{{ end }}
 
 		<title>{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}</title>
 

@@ -43,10 +43,18 @@ $color-transition:
     --code-filter: contrast(0.4) brightness(0.9);
 }
 
+// For desktop sized displays.
+$container-width: 800px;
+$content-font-size: 14pt;
+
+// Use "smaller" sizes for small screens.
+$small-device-width: 600px;
+$small-content-font-size: 12pt;
+
 // Fonts
-$serif-primary: 'Libre Baskerville', 'Times New Roman', Times, serif;
-$serif-secondary: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
-$sans-serif: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+$serif-primary: 'Nunito Sans', 'Times New Roman', Times, serif;
+$serif-secondary: 'Nunito Sans', 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+$sans-serif: 'Fira Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
 $monospaced: Menlo, Monaco, monospace;
 
 @mixin box-sizing($type: border-box) {

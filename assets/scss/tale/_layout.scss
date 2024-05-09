@@ -4,8 +4,7 @@
 
 .container {
   margin: 0 auto;
-  max-width: 800px;
-  width: 80%;
+  max-width: $container-width;
 }
 
 // Carve out an exception from the 80% narrowing of the viewport for the table
@@ -17,17 +16,17 @@ footer,
 .nav-container {
   display: block;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: $container-width;
   width: 80%;
 }
 
 #darkModeToggle {
     float: right;
     position: sticky;
-    top: 2rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    font-size: 2rem;
+    top: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font-size:1.5rem;
 
     cursor: pointer;
 }

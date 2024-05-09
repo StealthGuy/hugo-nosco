@@ -1,11 +1,21 @@
 <a href="{{ .Permalink }}" class="catalogue-item">
-    <div>
-        <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
-        <h2 class="catalogue-title">{{ .Title }}</h2>
-        <div class="catalogue-line"></div>
+  <div>
+    <time datetime="{{ .PublishDate }}" class="catalogue-time"
+      >{{ i18n "publishdate" . }}</time
+    >
+    <h1 class="catalogue-title">{{ .Title }}</h1>
+    <div class="catalogue-line"></div>
+    <p>
+      {{- if isset .Params "summary" }} {{- .Params.Summary | markdownify }} {{-
+      else }} {{- .Summary }} {{- end }}
+    </p>
 
-        <p>
-            {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
-        </p>
-    </div>
+    {{- if isset .Params "tags" }}
+    <p>
+      {{- range .Params.tags }}
+      <em>#{{ . }}</em>
+      {{- end }}
+    </p>
+    {{- end }}
+  </div>
 </a>
