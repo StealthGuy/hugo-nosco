@@ -1,0 +1,94 @@
+/* Base button styles */
+.button,
+.button-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #ffffff !important;
+}
+
+/* Button sizes */
+.button.small,
+.button-outline.small {
+    font-size: 12px;
+    background-color: #e74c3c;
+}
+
+.button.normal,
+.button-outline.normal {
+    font-size: 16px;
+    background-color: #f39c12;
+}
+
+.button.large,
+.button-outline.large {
+    font-size: 20px;
+    background-color: #3498db;
+}
+
+/* Button colors */
+.button.theme,
+.button-outline.theme {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.button.red,
+.button-outline.red {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.button.green,
+.button-outline.green {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+.button.blue,
+.button-outline.blue {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+.button.orange,
+.button-outline.orange {
+    background-color: #f39c12;
+    color: #ffffff;
+}
+
+/* Button hover effect */
+.button:hover,
+.button-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button with outline styles */
+.button-outline {
+    background-color: transparent;
+    border: 2px solid;
+}
+
+/* Button with icon styles */
+.button i,
+.button-outline i {
+    margin-right: 5px;
+}
+
+/* Button hover effect for color */
+.button:hover,
+.button.theme:hover,
+.button.red:hover,
+.button.green:hover,
+.button.blue:hover,
+.button.orange:hover,
+.button-outline:hover,
+.button:hover {
+    filter: brightness(90%);
+}

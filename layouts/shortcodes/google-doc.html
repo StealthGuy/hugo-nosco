@@ -1,0 +1,13 @@
+{{ $docURL := .Get "url" }}
+{{ $splitURL := split $docURL "/" }}
+{{ $docID := index $splitURL (sub (len $splitURL) 2) }}
+
+{{ if eq (index $splitURL 3) "presentation" }}
+  <iframe src="https://docs.google.com/presentation/d/{{ $docID }}/embed" frameborder="0" width="100%" height="600px"></iframe>
+{{ else if eq (index $splitURL 3) "document" }}
+  <iframe src="https://docs.google.com/document/d/{{ $docID }}/preview" frameborder="0" width="100%" height="600px"></iframe>
+{{ else if eq (index $splitURL 3) "spreadsheets" }}
+  <iframe src="https://docs.google.com/spreadsheets/d/{{ $docID }}/htmlview" frameborder="0" width="100%" height="600px"></iframe>
+{{ else if eq (index $splitURL 3) "forms" }}
+  <iframe src="https://docs.google.com/forms/d/e/{{ $docID }}/viewform?embedded=true" frameborder="0" width="100%" height="600px"></iframe>
+{{ end }}

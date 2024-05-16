@@ -1,0 +1,68 @@
+{{ $name := .Get "name" | default "Spoiler" }}
+{{ $content := .Inner }}
+
+<div class="spoiler-container">
+    <div class="spoiler-toggle" onclick="toggleSpoiler(this)">
+        <i>{{ $name }}</i>
+    </div>
+    <div class="spoiler-content">
+        {{ $content | markdownify }}
+    </div>
+</div>
+
+<style>
+    .spoiler-container {
+        position: relative;
+    }
+
+    .spoiler-toggle {
+        background-color: #444;
+        color: #fff;
+        padding: 0.5em;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .spoiler-toggle:hover {
+        background-color: #555;
+    }
+
+    .spoiler-toggle:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        border-radius: 10px;
+    }
+
+    .spoiler-toggle:hover:before {
+        opacity: 0.2;
+    }
+
+    .spoiler-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .spoiler-container.open .spoiler-content {
+        opacity: 1;
+        max-height: 1000px;
+    }
+</style>
+
+<script async>
+    function toggleSpoiler(toggle) {
+        const spoilerContainer = toggle.parentElement;
+        spoilerContainer.classList.toggle('open');
+    }
+</script>
+

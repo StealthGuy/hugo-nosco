@@ -2,8 +2,7 @@
 // This is necessary because some elements want to set transitions themselves,
 // which would result in deleting the color transitions specified in less
 // specific selectors.
-$color-transition:
-    background-color .4s ease-out,
+$color-transition: background-color .4s ease-out,
     color .4s ease-out,
     border-color .4s ease-out,
     box-shadow .4s ease-out;
@@ -12,7 +11,7 @@ $color-transition:
 // Make the default be dark mode. That way, the more complicated case is the
 // default and thus bugs are discovered earlier.
 :root.light {
-    --default-color: #555;
+    --default-color: #37352f; //555 previous
     --background-color: #fff;
     --default-shade: #353535;
     --default-tint: #aaa;
@@ -23,23 +22,34 @@ $color-transition:
     --white: #fff;
     --blue: #4a9ae1;
     --shadow-color: rgba(0, 0, 0, .2);
-    --code-color: #bf616a;
+    // --code-color: #bf616a;
+    --code-color: #e9585a;
     --code-filter: ;
 }
 
 :root:not(.light) {
-    --default-color: #888;
-    --background-color: #000;
-    --default-shade: #989898;
-    --default-tint: #555;
-    --grey-1: #606060;
-    --grey-2: #404040;
-    --grey-3: #202020;
-    --grey-4: #181818;
+    // --default-color: #888;
+    --default-color: #eaeaea;
+    // --background-color: #000;
+    --background-color: #191919;
+    // --default-shade: #989898;
+    --default-shade: #eaeaea;
+    // --default-tint: #555;
+    --default-tint: #d4d4d4;
+    // --grey-1: #606060;
+    // --grey-2: #404040;
+    // --grey-3: #202020;
+    // --grey-4: #181818;
+    --grey-1: #d4d4d4;
+    --grey-2: #d4d4d4;
+    --grey-3: #d4d4d4;
+    --grey-4: #d4d4d4;
     --white: #fff;
-    --blue: #1d6baf;
+    // --blue: #1d6baf;
+    --blue: #9c9c9c;
     --shadow-color: rgba(0, 0, 0, .2);
-    --code-color: #a3434c;
+    // --code-color: #a3434c;
+    --code-color: #da5151;
     --code-filter: contrast(0.4) brightness(0.9);
 }
 
@@ -58,13 +68,13 @@ $sans-serif: 'Fira Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
 $monospaced: Menlo, Monaco, monospace;
 
 @mixin box-sizing($type: border-box) {
-  -webkit-box-sizing: $type;
-     -moz-box-sizing: $type;
-          box-sizing: $type;
+    -webkit-box-sizing: $type;
+    -moz-box-sizing: $type;
+    box-sizing: $type;
 }
 
 @mixin transition($args...) {
-  -webkit-transition: $args;
-     -moz-transition: $args;
-          transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    transition: $args;
 }

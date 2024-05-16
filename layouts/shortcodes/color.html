@@ -1,0 +1,18 @@
+<!-- {{- $color := .Get "color" -}}
+{{- $text := .Get "text" -}}
+<span style="color: {{ $color }}">{{ $text }}</span> -->
+
+{{- $color := .Get "color" -}}
+{{- $text := .Get "text" -}}
+
+{{ if eq $color "red" }}
+<span style="color: #d44c47">{{ $text }}</span>
+{{ else if eq $color "blue" }}
+<span style="color: #347ea9">{{ $text }}</span>
+{{ else if eq $color "green" }}
+<span style="color: #458361">{{ $text }}</span>
+{{ else if eq $color "orange" }}
+<span style="color: #cb9230">{{ $text }}</span>
+{{ else if eq $color "gray" }}
+<span style="color: #787775">{{ $text }}</span>
+{{ end }}

@@ -1,0 +1,86 @@
+<!-- 
+    BEAWARE! I added @import 'tale/boxicons'; in scss/tale.scss and fonts in static/fonts
+    
+    
+    @import 'tale/boxicons'; -->
+
+
+{{ $noticeType := .Get 0 }}
+{{ $content := .Inner }}
+
+<div class="notice {{ $noticeType }}">
+    <div class="icon">
+        {{ if eq $noticeType "success" }}
+        <!-- <i class='bx bxs-check-circle'></i> -->
+        <span class="n-emoji">✅</span>
+        {{ else if eq $noticeType "info" }}
+        <!-- <i class='bx bxs-info-circle'></i> -->
+        <span class="n-emoji">ℹ️</span>
+        {{ else if eq $noticeType "callout" }}
+        <!-- <i class='bx bx-bulb'></i> -->
+        <span class="n-emoji">💡</span>
+        {{ else if eq $noticeType "warning" }}
+        <!-- <i class='bx bxs-error-circle'></i> -->
+        <span class="n-emoji">⚠️</span>
+        {{ else if eq $noticeType "error" }}
+        <!-- <i class='bx bxs-x-circle'></i> -->
+        <span class="n-emoji">🚨</span>
+        {{ end }}
+    </div>
+    <div class="content">
+        {{ $content | markdownify }}
+    </div>
+</div>
+
+<style>
+    .notice {
+        display: flex;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    .notice .icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .notice .n-emoji {
+        display: flex;
+        align-items: center;
+    }
+
+
+    .notice .content {
+        margin-left: 0.5rem;
+    }
+
+    .success {
+        background-color: #edf3ec;
+        color: #458361;
+        border: 1px solid #edf3ec;
+    }
+
+    .info {
+        background-color: #e7f3f9;
+        color: #347ea9;
+        border: 1px solid #e7f3f9;
+    }
+    .callout {
+        background-color: #f1f1ef;
+        color: #37352f;
+        border: 1px solid #f1f1ef;
+    }
+
+    .warning {
+        background-color: #fbf3dc;
+        color: #cb9230;
+        border: 1px solid #fbf3dc;
+    }
+
+    .error {
+        background-color: #fdebec;
+        color: #d44c47;
+        border: 1px solid #fdebec;
+    }
+</style>

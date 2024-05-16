@@ -1,0 +1,29 @@
+<div class="mermaid">
+    {{ .Inner }}
+</div>
+
+<style>
+
+    .mermaid {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        background-color: #fff;
+    }
+        
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" defer></script>
+<script async>
+    document.addEventListener('DOMContentLoaded', function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            fontFamily: 'Arial, sans-serif',
+            flowchart: { curve: 'linear' },
+            sequence: { actorMargin: 50 },
+            gantt: { axisFormat: '%Y-%m-%d' },
+        });
+    });
+</script>
+
